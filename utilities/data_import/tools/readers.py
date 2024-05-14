@@ -1,9 +1,10 @@
 from numpy import ndarray
 import pandas as pd
 from utilities.data_import.tools.data_entry_counter import data_entry_counter
+from utilities.data_import.tools.formatter import column_name_formatter
 
 class Readers: 
-    def csv(file_path: str) -> ndarray:
+    def csv(file_path: str, formatting: bool) -> ndarray:
         """Converts a csv file into a pandas dataframe"""
             
         # Opens the csv file and create a list of strings containing all data 
@@ -32,10 +33,19 @@ class Readers:
         # Dataframe creation
         df = pd.DataFrame(data, columns=headers)
 
+        # Column name formatting
+        if formatting:
+            df = column_name_formatter(df)
+
         return df
 
-    def xlsx(file_path: str) -> ndarray:
+    def xlsx(file_path: str, formatting: bool) -> ndarray:
         """Converts an excel file into a pandas dataframe"""
         df = pd.read_excel(file_path)
+
+        # Column name formatting
+        if formatting:
+            df = column_name_formatter(df)
+
         return df
 
