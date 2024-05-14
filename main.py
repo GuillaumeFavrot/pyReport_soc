@@ -4,7 +4,7 @@ from utilities.data_import.import_processor import import_file
 
 def main() -> None:
 
-    polices = import_file("./excel_raw_data/polices.csv")
+    polices = import_file("polices.csv")
 
     print(polices.head())
 
