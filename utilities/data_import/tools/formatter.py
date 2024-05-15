@@ -12,7 +12,6 @@ def column_name_formatter(df: ndarray) -> ndarray:
 
     for column in df.columns:
         old_name = str(column)
-        print(old_name)
         
         #All lowercase
         new_name = old_name.lower()
