@@ -1,7 +1,7 @@
 import time
 
 class TimerError(Exception):
-    """A custom exception used to report errors in use of Timer class"""
+    """Erreur custom pour signifier la mauvaise utilisation du timer"""
 
 class Timer:
     def __init__(self):
