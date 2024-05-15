@@ -1,5 +1,5 @@
 def data_entry_counter(list: list) -> int:
-    """Counts the number of non-empty values in a data entry"""
+    """Compte le nombre de valeur non vide dans une entrée de tableau"""
     counter = 0
     for entry in list:
         if entry != "":

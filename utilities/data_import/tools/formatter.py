@@ -2,6 +2,7 @@ from numpy import ndarray
 import re
 
 def column_name_formatter(df: ndarray) -> ndarray:
+    """formatte les noms de colonne extraits des fichiers sources afin d'être plus facilement utilisables dans python"""
 
     replacements = [
         ("n°", "numero"),
