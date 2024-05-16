@@ -12,11 +12,10 @@ def main() -> None:
 
     #Création d'un nouveau log et timer d'execution
     logger = Logger(report_name)
-    timer = Timer()
+    timer = Timer(logger)
     
     #Lancement du log et du timer d'exectution
     timer.start()
-    logger.info(f'{timer.get_time()} - Lancement du script "{report_name}"')
 
     #Extraction des données depuis le ou les fichiers sources
     polices = import_file(timer, logger, "polices.csv")
@@ -36,7 +35,6 @@ def main() -> None:
     export_data(timer=timer, logger=logger,  df=polices, output_file_name="file.xlsx", config=config)
 
     #Fin du timer et de l'execution
-    logger.info(f'{timer.get_time()} - Fin d\'éxecution')
     timer.stop()
 
 if __name__ == "__main__":

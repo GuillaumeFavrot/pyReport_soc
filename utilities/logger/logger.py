@@ -6,6 +6,7 @@ timestamp = f"{datetime.date.today()}--{datetime.datetime.now().hour}-{datetime.
 class Logger():
 
     def __init__(self, report):
+        self.report_name = report
         self.logger = logging.getLogger(report)
         logging.basicConfig(filename=f"./logs/{timestamp}.log", encoding='utf-8', level=logging.DEBUG)
 
