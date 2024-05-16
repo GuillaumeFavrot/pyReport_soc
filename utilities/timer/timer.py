@@ -35,7 +35,7 @@ class Timer:
             raise TimerError(f"Timer is not running. Use .start() to start it")
 
         elapsed_time = time.perf_counter() - self._start_time
-        selflogger.info(f'{self.get_time()} - Fin d\'éxecution - Temps d\'éxecution total: {elapsed_time}')
+        self.logger.info(f'{self.get_time()} - Fin d\'éxecution - Temps d\'éxecution total: {elapsed_time}')
         self._start_time = None
         
         

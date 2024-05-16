@@ -7,6 +7,12 @@ def create_report(timer:Timer, logger:Logger, template_name: str, report_name: s
 
     # Création des liens vers les fichiers sources et destination
     logger.info(f'{timer.get_time()} - Création du rapport {report_name} à partir du modèle {template_name}')
+
+    # Vérification du type des variables template_name et report_name
+    if type(template_name | report_name) != str:
+        logger.error(f'{timer.get_time()} - Les noms des fichiers "report_name" et "template_name" doivent être des chaînes de caractères')
+        raise TypeError('"report_name" and "template_name" file name must be strings')
+
     template_file_path = f"./templates/{template_name}"
     report_file_path = f"./output/{report_name}"
 
