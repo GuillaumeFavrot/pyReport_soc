@@ -28,7 +28,7 @@ def main() -> None:
     
     #Création de la configuration d'exportation ("nom_de_la_clonne_a_exporter", "feuille_dan_le_fichier_destination", "cellule")
     config = [
-        ("societ_code", "Fichier de surveillance", "C10")
+        ("societ_code", "Fichier de surveillance", "C10"),
     ]
 
     #Insertion des données dans le fichier rapport
