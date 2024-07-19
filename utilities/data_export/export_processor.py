@@ -47,7 +47,7 @@ def export_data(timer:Timer, logger:Logger, df: ndarray, output_file_name: str, 
         #Ectraction des donées de configuration
         (column_name, sheet_name, cell) = c
         
-        logger.info(f"{timer.get_time()} - Copie en cours des données {column_name} dans la feuille {sheet_name} du fichier {output_file_name}")
+        logger.info(f"{timer.get_time()} - Copie des données {column_name} dans la feuille {sheet_name} du fichier {output_file_name}")
         
         #Création des variables necessaires à l'exportation
         row = int(re.sub("[^ 0-9]+", '', cell))

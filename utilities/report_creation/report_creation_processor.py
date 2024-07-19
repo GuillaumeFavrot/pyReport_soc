@@ -2,11 +2,11 @@ import shutil
 from utilities.logger.logger import Logger
 from utilities.timer.timer import Timer
 
-def create_report(timer:Timer, logger:Logger, template_name: str, report_name: str) -> None:
+def create_report_output_file(timer:Timer, logger:Logger, template_name: str, report_name: str) -> None:
     """Crée un nouveau fichier "rapport" à partir d'un fichier template"""
 
     # Création des liens vers les fichiers sources et destination
-    logger.info(f'{timer.get_time()} - Création du rapport {report_name} à partir du modèle {template_name}')
+    logger.info(f'{timer.get_time()} - Création du fichier rapport {report_name} à partir du modèle {template_name}')
 
     # Vérification du type des variables template_name et report_name
     if type(template_name) != str or type(report_name) != str:
