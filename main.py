@@ -41,7 +41,9 @@ def main() -> None:
         ("couts_sinistre", "Fichier de surveillance", "M10"),
         ("sp", "Fichier de surveillance", "O10"),
         ("code_distrib", "Fichier de surveillance", "R10"),
-        ("nom_distrib", "Fichier de surveillance", "Q10")
+        ("nom_distrib", "Fichier de surveillance", "Q10"),
+        ("typologie_contrats", "Fichier de surveillance", "T10"),
+        ("nature_sinistre", "Fichier de surveillance", "V10"),
     ]
 
     #Insertion des données dans le fichier rapport

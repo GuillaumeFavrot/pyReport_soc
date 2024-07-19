@@ -5,6 +5,8 @@ from utilities.logger.logger import Logger
 from main_logic.tools.vlookup import vlookup
 from main_logic.tools.count_iterations import count_iterations
 from main_logic.tools.get_column_sum_in_subset import get_column_sum_in_subset
+from main_logic.tools.concat_in_subset import concat_in_subset
+from main_logic.tools.concat_in_subset_condition import concat_in_subset_condition
 
 def generate_report(timer: Timer, logger: Logger, polices: ndarray, distributeurs: ndarray, rapport_sp: ndarray, societaires: ndarray) -> ndarray :
     """Reçoit des dataframe source en entrée et génère un rapport au format dataframe en sortie"""
@@ -53,14 +55,14 @@ def generate_report(timer: Timer, logger: Logger, polices: ndarray, distributeur
 
     ## Récupération de la typologie des contrats du sociétaire
     logger.info(f"{timer.get_time()} - Récupération de la typologie des contrats du sociétaire")
+    report["typologie_contrats"] = report["societ_code"].apply(concat_in_subset, args=(polices, "societ_code", "famille"))
 
 
     ## Récupération de la nature des sinistres
     logger.info(f"{timer.get_time()} - Récupération de la nature des sinistres")
-
+    report["nature_sinistre"] = report["societ_code"].apply(concat_in_subset_condition, args=(rapport_sp, "code_societ", "garantiec"))
 
     # Fin du processus de génération du rapport
     logger.info(f"{timer.get_time()} - Génération des données du rapport terminée")
-    print(report)
 
     return report
